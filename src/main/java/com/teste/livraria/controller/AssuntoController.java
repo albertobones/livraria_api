@@ -21,8 +21,13 @@ import com.teste.livraria.dto.AssuntoDTO;
 import com.teste.livraria.service.AssuntoService;
 import com.teste.livraria.service.exception.DataIntegrityViolationException;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 @RestController
 @RequestMapping("/assuntos")
+@AllArgsConstructor
+@NoArgsConstructor
 public class AssuntoController {
 	
     @Autowired

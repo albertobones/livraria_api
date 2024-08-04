@@ -22,10 +22,12 @@ import com.teste.livraria.service.LivroService;
 import com.teste.livraria.service.exception.DataIntegrityViolationException;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @RestController
 @RequestMapping("/livros")
+@NoArgsConstructor
 public class LivroController {
 	
     @Autowired

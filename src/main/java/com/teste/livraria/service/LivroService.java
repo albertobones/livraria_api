@@ -36,7 +36,9 @@ public class LivroService {
     }
     
     public LivroDTO update(Integer codL, LivroDTO livroDTO) {
+    	System.out.println("codL: "+livroDTO.getCodL());
     	livroDTO.setCodL(codL);
+    	System.out.println("Setado: "+livroDTO.getCodL());
     	return livroMapper.toLivroDTO(livroRepository.save(livroMapper.toLivro(livroDTO)));
     }
 

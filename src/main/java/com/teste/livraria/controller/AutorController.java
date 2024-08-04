@@ -22,10 +22,12 @@ import com.teste.livraria.service.AutorService;
 import com.teste.livraria.service.exception.DataIntegrityViolationException;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @RestController
 @RequestMapping("/autores")
+@NoArgsConstructor
 public class AutorController {
 	
     @Autowired
@@ -42,9 +44,9 @@ public class AutorController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<AutorDTO> createAutor(@RequestBody AutorDTO autorDTO) {
+    public ResponseEntity<AutorDTO> createAutor(@Valid @RequestBody AutorDTO autorDTO) {
     	autorDTO = autorService.create(autorDTO);
-    	URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{codAu}").buildAndExpand(autorDTO.getCodAu()).toUri();
+    	URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{CodAu}").buildAndExpand(autorDTO.getCodAu()).toUri();
 		return ResponseEntity.created(uri).body(autorDTO);
     }
 
