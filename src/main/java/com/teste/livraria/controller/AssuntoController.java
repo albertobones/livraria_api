@@ -61,7 +61,7 @@ public class AssuntoController {
         try {
         	assuntoService.deleteById(codAs);
 		} catch (Exception e) {
-			throw new DataIntegrityViolationException("Livro não pode ser deletado! Possui livros associados");
+			throw new DataIntegrityViolationException("Assunto não pode ser deletado! Possui livros associados");
 		}
 		return ResponseEntity.noContent().build();
     }

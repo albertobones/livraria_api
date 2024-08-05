@@ -19,5 +19,4 @@ public class AssuntoDTO {
 		this.codAs = assunto.getCodAs();
 		this.descricao = assunto.getDescricao();
 	}
-    
 }

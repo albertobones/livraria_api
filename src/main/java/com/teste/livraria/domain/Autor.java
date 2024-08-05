@@ -32,7 +32,7 @@ public class Autor {
     private Integer codAu;
     
     @NotEmpty(message = "O campo NOME DO AUTOR é obrigatório!")
-	@Length(min = 3, max = 100, message = "O campo NOME DO AUTOR deve ter entre 3 e 40 caracteres!")
+	@Length(max = 40, message = "O campo NOME DO AUTOR deve ter no máximo 40 caracteres!")
 	@Column(name = "Nome")
     private String nome;
 

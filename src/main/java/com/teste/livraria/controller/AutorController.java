@@ -61,7 +61,7 @@ public class AutorController {
         try {
         	autorService.deleteById(codAu);
 		} catch (Exception e) {
-			throw new DataIntegrityViolationException("Livro não pode ser deletado! Possui livros associados");
+			throw new DataIntegrityViolationException("Autor não pode ser deletado! Possui livros associados");
 		}
 		return ResponseEntity.noContent().build();
     }

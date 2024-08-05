@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.teste.livraria.domain.Assunto;
 import com.teste.livraria.dto.AssuntoDTO;
@@ -31,16 +33,18 @@ public class AssuntoService {
     	return assuntoMapper.toAssuntoDTO(autor.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! ID: " + id + " Tipo: " + Assunto.class.getName())));
     }
 
-
+    @Transactional(propagation = Propagation.REQUIRED)
     public AssuntoDTO create(AssuntoDTO assuntoDTO) {
         return assuntoMapper.toAssuntoDTO(assuntoRepository.save(assuntoMapper.toAssunto(assuntoDTO)));
     }
 
+    @Transactional(propagation = Propagation.REQUIRED)
     public AssuntoDTO update(Integer codAs, AssuntoDTO assuntoDTO) {
     	assuntoDTO.setCodAs(codAs);
     	return assuntoMapper.toAssuntoDTO(assuntoRepository.save(assuntoMapper.toAssunto(assuntoDTO)));
     }
 
+    @Transactional(propagation = Propagation.REQUIRED)
     public void deleteById(Integer id) {
     	assuntoRepository.deleteById(id);
     }
