@@ -24,6 +24,7 @@ Sistema para cadastro de livros, autores e assuntos
 1. Clone o repositório:
 	-git clone https://github.com/albertobones/livraria_api.git
 	-entre na pasta do projeto
+	-git checkout develop
 
 2. Configuração do Banco de Dados:
 
