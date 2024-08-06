@@ -26,7 +26,7 @@ public class Assunto {
     private Integer codAs;
     
     @NotEmpty(message = "O campo DESCRICAO DO ASSUNTO é obrigatório!")
-	@Length(max = 20, message = "O campo DESCRICAO DO ASSUNTO deve ter no máximo 20 caracteres!")
+	@Length(min = 3, max = 20, message = "O campo DESCRICAO DO ASSUNTO deve ter entre 3 e 20 caracteres!")
 	@Column(name = "Descricao")
     private String descricao;
 

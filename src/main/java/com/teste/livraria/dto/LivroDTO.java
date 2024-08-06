@@ -2,6 +2,7 @@ package com.teste.livraria.dto;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import com.teste.livraria.domain.Livro;
@@ -24,7 +25,7 @@ public class LivroDTO {
     
     private List<AutorDTO> autores;
     private List<AssuntoDTO> assuntos;
-    
+
     public LivroDTO(Livro livro) {
     	super();
     	this.codL = livro.getCodL();
@@ -36,4 +37,11 @@ public class LivroDTO {
     	this.autores = livro.getAutores().stream().map(obj -> new AutorDTO(obj)).collect(Collectors.toList());
     	this.assuntos = livro.getAssuntos().stream().map(obj -> new AssuntoDTO(obj)).collect(Collectors.toList());
     }
+
+	public String getAssuntoAgrupado() {
+		return Objects.nonNull(getAssuntos())?getAssuntos().stream()
+                .map(AssuntoDTO::getDescricao)
+                .collect(Collectors.joining(", ")): "";
+	}    
+    
 }

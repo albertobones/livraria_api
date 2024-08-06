@@ -52,7 +52,7 @@ public class LivroController {
 
     @PutMapping("/update/{codL}")
     public ResponseEntity<LivroDTO> updateLivro(@PathVariable Integer codL, @Valid @RequestBody LivroDTO livroDTO) {
-        livroDTO = livroService.update(codL, livroDTO);        
+        livroDTO = livroService.update(codL, livroDTO);
         return ResponseEntity.ok().body(livroDTO);
     }
 
@@ -61,7 +61,7 @@ public class LivroController {
         try {
         	livroService.deleteById(codL);
 		} catch (Exception e) {
-			throw new DataIntegrityViolationException("Livro não pode ser deletado! Possui livros associados");
+			throw new DataIntegrityViolationException("Livro não pode ser deletado!");
 		}
 		return ResponseEntity.noContent().build();
     }

@@ -1,5 +1,7 @@
 package com.teste.livraria.dto;
 
+import java.util.List;
+
 import com.teste.livraria.domain.Autor;
 
 import lombok.AllArgsConstructor;
@@ -13,6 +15,7 @@ public class AutorDTO {
 	
 	private Integer codAu;    
     private String nome;
+    private List<LivroDTO> livroDTOs;
 	
 	public AutorDTO(Autor autor) {
     	super();
