@@ -47,14 +47,3 @@ Sistema para cadastro de livros, autores e assuntos
 	
 	-Endereço da aplicação http://localhost:8080
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
